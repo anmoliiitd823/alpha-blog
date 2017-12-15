@@ -28,6 +28,7 @@ gem 'will_paginate'
 
 gem 'bootstrap-will_paginate'
 
+gem 'rails-controller-testing'
 
 #for password
 gem 'bcrypt','~> 3.1.7'
