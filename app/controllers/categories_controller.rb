@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
 	def index
-		@categories = Category.all
+		@categories = Category.paginate(page: params[:page],per_page: 5)
 	end
 
 	def new
@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
 			flash[:success] = "Category was successfully created"
 			redirect_to categories_path
 		else
-		
+			render 'new'
 		end	
 	end
 
