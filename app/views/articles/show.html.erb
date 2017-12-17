@@ -22,6 +22,12 @@
 	<%= @article.description %>
 </p>
 
+<p>
+	<% if @article.categories.any? %>
+		<p>Categories: <%= render @article.categories %></p>
+	<% end %>	
+</p>
+
 <% if logged_in? and (current_user == @article.user || current_user.admin?) %>
 <%= link_to "Edit this article" , edit_article_path(@article) %>
 <% end %>
